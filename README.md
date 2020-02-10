@@ -17,8 +17,11 @@ and the final length.
 You will do this by doing both an exaustive search and recursive search as described below. 
 You will need to also create a tester program using `JUnit` testing. 
 
+Note the access noted on each element and method below. 
+
 ### Elements 
 *  `private bool[][] game` -- Stores the final game state, cells that are `true` contain a part of the snake, and `false` are the background. Note that in this version of the game the snake will always have a barrier of one cell (i.e. every neighborhood of 9 cells around a portion of the snake will only ever have at most 3 `true` cells).
+* `private int[] headPosition` -- Stores the location of the snake's head. 
 * `private static int exaustiveChecks` -- counts the number of positions checked when performing the tail search using exaustive enumeration, across all instances of the `SnakeGame`. 
 * `private static int recursiveChecks` -- counts the number of positions checked when performing the tail search using recursive search, across all instances of the `SnakeGame`.
 
@@ -27,12 +30,12 @@ You will need to also create a tester program using `JUnit` testing.
 * a constructor that takes a 2-dimensional boolean array, and the `x` and `y` position of the snakes "head".
 
 ### Methods
-* `int[] findTailExaustive()` -- will find the tail of the snake by searching across the whole grid to find the grid position where a true element is surrounded by only one other true cell, but is not the head, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Incremenets the `exaustiveChecks` counter with each `(x',y')` that is examined.
-* `int[] findTailRecursive()` -- will find the tail of the snake by starting a search starting at the head location and recursivelly following the, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Incremenets the `recursiveChecks` counter with each `(x',y')` that is examined.
-* `int[] findTailRecursive(int x_start, int y_start)` -- overloads the previous method, and is similar in definition, but starts at a position other than the head position (used for the recursive calls). Incremenets the `recursiveChecks` counter with each `(x',y')` that is examined.
-* `void resetCounters()` -- resets both the `exaustiveChecks` and `recursiveChecks` counters to 0. 
-* `static int getRecursiveChecks()` -- gets the current state of the `recursiveChecks` counter. 
-* `static int getExaustiveChecks()` -- gets the current state of the `exaustiveChecks` counter. 
+* `public int[] findTailExaustive()` -- will find the tail of the snake by searching across the whole grid to find the grid position where a true element is surrounded by only one other true cell, but is not the head, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Incremenets the `exaustiveChecks` counter with each `(x',y')` that is examined.
+* `public int[] findTailRecursive()` -- will find the tail of the snake by conducting a search starting at the head location and recursively following the, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Increments the `recursiveChecks` counter with each `(x',y')` that is examined.
+* `private int[] findTailRecursive(int[] currentPosition, int[] previousPosition)` -- overloads the previous method, and is similar in definition, but starts at a position other than the head position (used for the recursive calls), also takes in the position of the previous body position (to exclude it from deciding the next position). Increments the `recursiveChecks` counter with each `(x',y')` that is examined. Hint: the call for starting from the head position made from the public method should be `findTailRecursive(headPosition, headPosition)`.
+* `private void resetCounters()` -- resets both the `exaustiveChecks` and `recursiveChecks` counters to 0. 
+* `private static int getRecursiveChecks()` -- gets the current state of the `recursiveChecks` counter. 
+* `private static int getExaustiveChecks()` -- gets the current state of the `exaustiveChecks` counter. 
 
 ## What needs to be turned in
 The following files should be turned in by **28 February 2020 at 11:59 PM**.
