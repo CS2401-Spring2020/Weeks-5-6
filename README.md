@@ -1,1 +1,39 @@
-# Weeks-5-6
+# Weeks 5 & 6 lab
+
+The game **Snake** is a popular game where the player attemps to move a virtual snake around a grid,
+extending it's length periodically, 
+without running into another section of the virtual snake or the barriers. 
+An example of a game is shown below. 
+
+![Snake Game](https://miro.medium.com/max/1600/1*dQzFEaAHwxouaImAuUd3EQ.gif)
+
+The players "score" for a gamne is the length of the snake when it does run into itself or the wall. 
+
+## Project task
+
+Create a new class, `SnakeGame`, which will be used to calculate someones final score. 
+You will be given the game board and the position of the snakes head, the goal will be to find the position of the snakes tail, 
+and the final length. 
+You will do this by doing both an exaustive search and recursive search as described below. 
+You will need to also create a tester program using `JUnit` testing. 
+
+### Elements 
+*  `private bool[][] game` -- Stores the final game state, cells that are `true` contain a part of the snake, and `false` are the background. Note that in this version of the game the snake will always have a barrier of one cell (i.e. every neighborhood of 9 cells around a portion of the snake will only ever have at most 3 `true` cells).
+* `private static int exaustiveChecks` -- counts the number of positions checked when performing the tail search using exaustive enumeration, across all instances of the `SnakeGame`. 
+* `private static int recursiveChecks` -- counts the number of positions checked when performing the tail search using recursive search, across all instances of the `SnakeGame`.
+
+### Constructors
+* the default constructor, which initializes an empty 1 x 1 gameboard, and 
+* a constructor that takes a 2-dimensional boolean array, and the `x` and `y` position of the snakes "head".
+
+### Methods
+* `int[] findTailExaustive()` -- will find the tail of the snake by searching across the whole grid to find the grid position where a true element is surrounded by only one other true cell, but is not the head, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Incremenets the `exaustiveChecks` counter with each `(x',y')` that is examined.
+* `int[] findTailRecursive()` -- will find the tail of the snake by starting a search starting at the head location and recursivelly following the, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Incremenets the `recursiveChecks` counter with each `(x',y')` that is examined.
+* `int[] findTailRecursive(int x_start, int y_start)` -- overloads the previous method, and is similar in definition, but starts at a position other than the head position (used for the recursive calls). Incremenets the `recursiveChecks` counter with each `(x',y')` that is examined.
+* `void resetCounters()` -- resets both the `exaustiveChecks` and `recursiveChecks` counters to 0. 
+* `int getRecursiveChecks()` -- gets the current state of the `recursiveChecks` counter. 
+* `int getExaustiveChecks()` -- gets the current state of the `exaustiveChecks` counter. 
+
+## What needs to be turned in
+* `SnakeGame.java`
+* `SnakeGameTester.java`
