@@ -35,5 +35,6 @@ You will need to also create a tester program using `JUnit` testing.
 * `int getExaustiveChecks()` -- gets the current state of the `exaustiveChecks` counter. 
 
 ## What needs to be turned in
+The following files should be turned in by **28 February 2020 at 11:59 PM**.
 * `SnakeGame.java`
 * `SnakeGameTester.java`
