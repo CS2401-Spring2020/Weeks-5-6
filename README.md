@@ -7,7 +7,7 @@ An example of a game is shown below.
 
 ![Snake Game](https://miro.medium.com/max/1600/1*dQzFEaAHwxouaImAuUd3EQ.gif)
 
-The players "score" for a gamne is the length of the snake when it does run into itself or the wall. 
+The players "score" for a game is the length of the snake when it does run into itself or the wall. 
 
 ## Project task
 
