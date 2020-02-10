@@ -31,8 +31,8 @@ You will need to also create a tester program using `JUnit` testing.
 * `int[] findTailRecursive()` -- will find the tail of the snake by starting a search starting at the head location and recursivelly following the, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Incremenets the `recursiveChecks` counter with each `(x',y')` that is examined.
 * `int[] findTailRecursive(int x_start, int y_start)` -- overloads the previous method, and is similar in definition, but starts at a position other than the head position (used for the recursive calls). Incremenets the `recursiveChecks` counter with each `(x',y')` that is examined.
 * `void resetCounters()` -- resets both the `exaustiveChecks` and `recursiveChecks` counters to 0. 
-* `int getRecursiveChecks()` -- gets the current state of the `recursiveChecks` counter. 
-* `int getExaustiveChecks()` -- gets the current state of the `exaustiveChecks` counter. 
+* `static int getRecursiveChecks()` -- gets the current state of the `recursiveChecks` counter. 
+* `static int getExaustiveChecks()` -- gets the current state of the `exaustiveChecks` counter. 
 
 ## What needs to be turned in
 The following files should be turned in by **28 February 2020 at 11:59 PM**.
