@@ -15,9 +15,10 @@ Create a new class, `SnakeGame`, which will be used to calculate someones final 
 You will be given the game board and the position of the snakes head, the goal will be to find the position of the snakes tail, 
 and the final length. 
 You will do this by doing both an exaustive search and recursive search as described below. 
-You will need to also create a tester program using `JUnit` testing. 
+You will need to also create at least 5 unit tests using `JUnit` that will test the two methods correctness and the running time. 
+Each test should have a comment describing what is being tested. 
 
-Note the access noted on each element and method below. 
+Note the access labeling each element and method below. 
 
 ### Elements 
 *  `private bool[][] game` -- Stores the final game state, cells that are `true` contain a part of the snake, and `false` are the background. Note that in this version of the game the snake will always have a barrier of one cell (i.e. every neighborhood of 9 cells around a portion of the snake will only ever have at most 3 `true` cells).
@@ -41,3 +42,17 @@ Note the access noted on each element and method below.
 The following files should be turned in by **28 February 2020 at 11:59 PM**.
 * `SnakeGame.java`
 * `SnakeGameTester.java`
+
+## Grading 
+Lateness rule: -10 pts for 1 day of lateness / - 20 pts for 2 days of lateness / 0 after that, but you still have to turn in your work 
+
+| Points | Item |
+| --- | --- |
+| 60 pts	| `SnakeGame.java` |
+| | 3 pts for the constructors |
+| | 2 pts for the elements |
+| | 5 pts for the getters and reseter |
+| | 20 pts for the exaustive method (and the counting) |
+| | 25 pts for the recursive method (and the counting) |
+| 40 pts	| `SnakeGameTester.java`| 
+| | 8 pts each test case, including comments|
