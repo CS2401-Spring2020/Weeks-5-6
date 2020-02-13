@@ -32,7 +32,7 @@ Note the access labeling each element and method below.
 
 ### Methods
 * `public int[] findTailExhaustive()` -- will find the tail of the snake by searching across the whole grid to find the grid position where a true element is surrounded by only one other true cell (see figure below), but is not the head, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Incremenets the `exhaustiveChecks` counter with each `(x',y')` that is examined.
-![Head and Tail example](/image/headTailExample.jpg)
+![Head and Tail example](/images/headTailExample.jpg)
 * `public int[] findTailRecursive()` -- will find the tail of the snake by conducting a search starting at the head location and recursively following the snake's body, and return 3 items: the `x` and `y` position of the tail in the grid, and the `length` of the snake on the board. Increments the `recursiveChecks` counter with each `(x',y')` that is examined.
 * `private int[] findTailRecursive(int[] currentPosition, int[] previousPosition)` -- overloads the previous method, and is similar in definition, but starts at a position other than the head position (used for the recursive calls), also takes in the position of the previous body position (to exclude it from deciding the next position). Increments the `recursiveChecks` counter with each `(x',y')` that is examined. Hint: the call for starting from the head position made from the public method should be `findTailRecursive(headPosition, headPosition)`.
 * `private void resetCounters()` -- resets both the `exhaustiveChecks` and `recursiveChecks` counters to 0. 
