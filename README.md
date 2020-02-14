@@ -57,3 +57,20 @@ Lateness rule: -10 pts for 1 day of lateness / - 20 pts for 2 days of lateness /
 | | 25 pts for the recursive method (and the counting) |
 | 40 pts	| `SnakeGameTester.java`| 
 | | 4 pts each test case, including comments|
+
+## Suggested Timeline
+By following this schedule youre lab will be completed within the 4 class/lab days the assignment is available
+
+| Day       | Element |
+| ---       | ---     |
+| Monday    | * `SnakeGame.java` outline     |
+|           | * Constructors                 |
+|           | * Seters/Getters               |
+|           | * Testing of ^^ elements       |
+| Wednesday | * Exhaustive search method (possibly with auxiliary functions if needed)    |
+|           | * Exhaustive test cases        |
+| Monday    | * Exhaustive test cases (cont.)|       
+|           | * Recursive search method      |
+|           | * Recursive test cases         |
+| Wednesday | * Recursive test cases (cont.) |
+|           | * Counter/additional tests     |
